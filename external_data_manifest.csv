@@ -1,0 +1,18 @@
+path,producer,consumer,purpose
+depmap_processed/DepMap_LUAD_Model_subset.csv,code.ipynb,code.ipynb,LUAD cell-line metadata subset
+depmap_processed/DepMap_LUAD_CRISPRGeneEffect_aligned.pkl,code.ipynb,code.ipynb,aligned LUAD dependency matrix
+depmap_processed/DepMap_LUAD_Expression_TPMLogp1_aligned.pkl,code.ipynb,code.ipynb,aligned LUAD expression matrix
+depmap_processed/DepMap_LUAD_CNGeneWGS_aligned.pkl,code.ipynb,code.ipynb,aligned LUAD copy-number matrix
+depmap_processed/depmap_luad_dataset.npz,code.ipynb,code.ipynb,training-ready LUAD model dataset
+data/TCGA/processed/TCGA_LUAD_STAR_log2TPM_samples_x_genes.rds,code_r.ipynb,running_r.ipynb,TCGA expression matrix
+data/TCGA/processed/TCGA_LUAD_Masked_Somatic_Mutation.rds,code_r.ipynb,running_r.ipynb,TCGA somatic mutation data
+data/TCGA/processed/TCGA_LUAD_CNV_geneTSS_matrix.rds,code_r.ipynb,running_r.ipynb,TCGA copy-number matrix
+data/TCGA/processed/TCGA_LUAD_Methylation_genePromoter_matrix.rds,code_r.ipynb,running_r.ipynb,TCGA promoter methylation matrix
+data/TCGA/processed/TCGA_LUAD_Clinical_sample_level.rds,code_r.ipynb,code.ipynb;running_r.ipynb,TCGA clinical and survival annotation
+data/TCGA/processed/TCGA_LUAD_multiomics_features.rds,code_r.ipynb,code.ipynb;running_r.ipynb,combined TCGA multi-omics object
+results/perf_dep_genelevel_by_model_fig2.csv,code.ipynb,code_supplementary.ipynb,gene-level dependency prediction performance
+results/dep_predictions_testset.csv,code.ipynb,code.ipynb,held-out dependency predictions for plots
+results/depmap_pan_scan.csv,code.ipynb,code.ipynb;code_supplementary.ipynb;running_r.ipynb,pan-gene model performance and TargetScore input
+results/ppi_edges_targets.csv,code_supplementary.ipynb,code_supplementary.ipynb,optional PPI edges for candidate genes
+python_data/tcga_luad_multi_for_python.rds,running_r.ipynb,running_r.ipynb,R object exported for Python conversion
+python_data/tcga_luad_multi.npz,running_r.ipynb,downstream Python checks,NumPy version of selected TCGA multi-omics data

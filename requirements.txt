@@ -1,0 +1,21 @@
+# Update this file with exact versions from the final analysis environment.
+# The manuscript reports Python 3.12.6.
+pandas
+numpy
+scipy
+scikit-learn
+xgboost
+lifelines
+matplotlib
+seaborn
+statsmodels
+jupyter
+ipython
+openpyxl
+pillow
+networkx
+requests
+gseapy
+scanpy
+omicverse
+cycler

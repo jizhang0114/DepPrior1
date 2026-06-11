@@ -1,0 +1,15 @@
+flowchart TD
+    A["Download public data"] --> B["Align DepMap dependency and molecular features"]
+    A --> C["Process TCGA-LUAD expression, mutation, CNV, methylation, and clinical data"]
+    B --> D["Train/test gene-wise dependency prediction models"]
+    D --> E["Compute AUROC, R2, RMSE"]
+    E --> F["Define high-signal genes"]
+    F --> G["Rank genes by DepScore"]
+    G --> H["Fix top candidate target set"]
+    H --> I["Assess TCGA multi-omics coherence and survival association"]
+    H --> J["Assess GEO and CPTAC reproducibility"]
+    H --> K["Perform selected FERMT2/CRKL perturbation support experiments"]
+    I --> L["Generate manuscript figures and supplementary tables"]
+    J --> L
+    K --> L
+    L --> M["Record versions, seeds, run logs, and source-data manifest"]

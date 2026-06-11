@@ -1,0 +1,21 @@
+path,purpose
+.gitignore,prevents committing downloaded datasets runtime outputs caches and large local files
+README.md,repository overview data availability quick start and reviewer-facing minimum contents
+RUN_ORDER.md,recommended execution order and expected outputs
+DATA_DICTIONARY.md,dataset provenance expected files and processing notes
+VERSIONING_AND_SEEDS.md,software versioning random seeds and determinism checklist
+workflow_diagram.mmd,top-level workflow diagram
+requirements.txt,pip-style Python package list
+environment.yml,Conda-style Python/R environment specification
+software_versions_declared.tsv,declared runtime versions and exact-version capture status
+code.ipynb,main Python notebook for DepMap modeling candidate prioritization TCGA analyses and figure generation
+code_r.ipynb,R notebook for TCGA/GDC retrieval and processing
+code_supplementary.ipynb,Python notebook for supplementary sensitivity external reproducibility and figure assembly analyses
+running_r.ipynb,additional R workflow checks and exported survival summaries
+data/README.md,explains that data directory contains manifests only
+data/external_data_manifest.csv,public dataset provenance and expected local input paths
+data/expected_intermediate_outputs.csv,generated intermediate output manifest
+scripts/collect_versions.py,Python/package version capture script
+scripts/collect_session_info.R,R sessionInfo and package-version capture script
+source_data/README_western_blot_source_data.md,western blot source-data recovery and submission checklist
+source_data/western_blot_source_data_manifest.csv,expected western blot source-data manifest

@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+"""Collect Python and package versions for DepPrior reproducibility records."""
+
+from __future__ import annotations
+
+import argparse
+import importlib
+import platform
+import sys
+from pathlib import Path
+
+
+PACKAGES = [
+    "pandas",
+    "numpy",
+    "scipy",
+    "sklearn",
+    "xgboost",
+    "lifelines",
+    "matplotlib",
+    "seaborn",
+    "statsmodels",
+    "IPython",
+    "openpyxl",
+    "PIL",
+    "networkx",
+    "requests",
+    "gseapy",
+    "scanpy",
+    "omicverse",
+    "cycler",
+]
+
+
+def package_version(name: str) -> str:
+    try:
+        module = importlib.import_module(name)
+    except Exception as exc:  # pragma: no cover - diagnostic script
+        return f"NOT_INSTALLED ({exc.__class__.__name__})"
+    return str(getattr(module, "__version__", "unknown"))
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--out", default="logs/python_versions.tsv")
+    args = parser.parse_args()
+
+    rows = [
+        ("python", platform.python_version()),
+        ("platform", platform.platform()),
+        ("executable", sys.executable),
+    ]
+    rows.extend((pkg, package_version(pkg)) for pkg in PACKAGES)
+
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(
+        "package\tversion\n" + "\n".join(f"{k}\t{v}" for k, v in rows) + "\n",
+        encoding="utf-8",
+    )
+    print(f"Wrote {out}")
+
+
+if __name__ == "__main__":
+    main()
